@@ -32,7 +32,7 @@ public:
   int arrSize(void) { return cap; }
 
   void clear(void) {
-    head = QUEUE_SIZE - 1;
+    head = cap - 1;
     tail = 0;
     count = 0;
   }
@@ -58,7 +58,7 @@ public:
         for(int j=tail;j<=cap;j++)
           tmpData[j-tail]=data[j];
         for(int j=0;j<=tail;j++)
-          tmpData[j+tail+8]=data[j];
+          tmpData[j+tail]=data[j];
       }
       // If tail==cap, then everything is linear
       // and there is no loopback in the Queue.
